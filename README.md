@@ -1,7 +1,7 @@
 📝 Todo List com Diário – Flutter
 
 Um aplicativo de Todo List com funcionalidade de diário, desenvolvido em Flutter utilizando Dart.
-O app permite organizar tarefas do dia a dia e também registrar anotações diárias de forma simples, prática e intuitiva.
+O app permite organizar tarefas do dia a dia e registrar anotações diárias de forma simples, prática e intuitiva.
 
 🚀 Funcionalidades
 
@@ -32,6 +32,7 @@ Os dados do aplicativo são salvos localmente usando Shared Preferences, garanti
 As tarefas não sejam perdidas ao fechar o app
 
 As anotações do diário permaneçam salvas no dispositivo
+
 📱 Telas do Aplicativo
 🏠 Home
 <img src="https://github.com/user-attachments/assets/cda6122b-e62c-4562-a877-07387a820a66" width="231" /> <br>

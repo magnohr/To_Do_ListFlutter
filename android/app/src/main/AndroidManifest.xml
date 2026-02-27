@@ -16,10 +16,18 @@
         android:name="android.hardware.camera"
         android:required="false" />
 
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
     <application
-        android:label="to_do_list"
+        android:label="TaskBook"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3338710274300696~7358366093"/>
 
         <activity
             android:name=".MainActivity"

@@ -32,7 +32,7 @@ class TodoListView extends StatelessWidget {
 
             // 🎨 cores alternadas
             final Color cardColor =
-            index.isEven ? AppColors.coral : AppColors.peach;
+            index.isEven ? AppColors.blueFigma : AppColors.Colorblue;
 
             return Dismissible(
               key: ValueKey(todo),

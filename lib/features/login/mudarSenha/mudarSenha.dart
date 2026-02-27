@@ -60,7 +60,7 @@ class _MudarSenhaState extends State<MudarSenha> {
                     obscureSenha
                         ? Icons.visibility_off
                         : Icons.visibility,
-                    color: AppColors.lightGray,
+                    color: AppColors.black,
                   ),
                   onPressed: () {
                     setState(() {
@@ -82,7 +82,7 @@ class _MudarSenhaState extends State<MudarSenha> {
                     obscureConfirmar
                         ? Icons.visibility_off
                         : Icons.visibility,
-                    color: AppColors.lightGray,
+                    color: AppColors.grayDark,
                   ),
                   onPressed: () {
                     setState(() {
@@ -100,7 +100,7 @@ class _MudarSenhaState extends State<MudarSenha> {
                 height: 48,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.peach,
+                    backgroundColor: AppColors.blueFigma,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),

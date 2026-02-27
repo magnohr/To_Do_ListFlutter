@@ -103,7 +103,7 @@ class _AddtarefaEditarState extends State<AddtarefaEditar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.peach,
+      backgroundColor: AppColors.blueFigma,
 
       body: Padding(
         padding: const EdgeInsets.all(24.0),

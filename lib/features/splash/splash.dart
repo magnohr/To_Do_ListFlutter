@@ -34,14 +34,22 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white, // aqui você define o fundo branco
       body: SafeArea(
         child: Center(
+
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset('assets/images/Union.svg'),
+
               const SizedBox(height: 30),
-              SvgPicture.asset('assets/images/rafiki.svg'),
+              Image.asset(
+                'assets/images/StoryG.png',
+                width: 300,  // largura opcional
+                height: 300, // altura opcional
+                fit: BoxFit.contain, // melhor que cover
+              ),
+              const SizedBox(height: 10),
             ],
           ),
         ),

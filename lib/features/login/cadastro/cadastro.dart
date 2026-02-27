@@ -41,6 +41,7 @@ class _CadastroState extends State<Cadastro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -49,17 +50,18 @@ class _CadastroState extends State<Cadastro> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 104),
-            
-                SvgPicture.asset(
-                  'assets/images/Union.svg',
-                  width: 187,
-                  height: 180,
+
+                Image.asset(
+                  'assets/images/StoryG.png',
+                  width: 250,  // largura opcional
+                  height: 250, // altura opcional
+                  fit: BoxFit.contain, // melhor que cover
                 ),
             
                 const SizedBox(height: 64),
             
                 AppInput(
-                  hint: 'Email',
+                  hint: 'Apelido',
                   controller: emailController,
                 ),
                 const SizedBox(height: 10),
@@ -79,7 +81,7 @@ class _CadastroState extends State<Cadastro> {
                       obscurePassword
                           ? Icons.visibility_off
                           : Icons.visibility,
-                      color: AppColors.lightGray,
+                      color: AppColors.black,
                     ),
                     onPressed: () {
                       setState(() {
@@ -104,7 +106,7 @@ class _CadastroState extends State<Cadastro> {
                   height: 48,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.peach,
+                      backgroundColor: AppColors.Colorblue,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
@@ -112,7 +114,7 @@ class _CadastroState extends State<Cadastro> {
                     onPressed: () async {
                       final cadastro = CadastroModel(
                         nome: nomeController.text.trim(),
-                        email: emailController.text.trim(),
+                        apelido: emailController.text.trim(),
                         senha: senhaController.text.trim(),
                         confirmarSenha: confirmarSenhaController.text.trim(),
                       );
@@ -121,8 +123,8 @@ class _CadastroState extends State<Cadastro> {
             
                       if (cadastro.nome.isEmpty) {
                         erro = 'Nome é obrigatório';
-                      } else if (!cadastro.emailValido) {
-                        erro = 'Email inválido';
+                      } else if (!cadastro.apelidoValido) {
+                        erro = 'Apelido inválido';
                       } else if (!cadastro.senhaValida) {
                         erro = 'Senha deve ter no mínimo 6 caracteres';
                       } else if (!cadastro.senhasIguais) {
@@ -149,13 +151,13 @@ class _CadastroState extends State<Cadastro> {
                     ),
                   ),
                 ),
-            
+
                 const SizedBox(height: 10),
             
                 RichText(
                   text: TextSpan(
                     text: 'Have an account? ',
-                    style: TextStyle(color: AppColors.dark),
+                    style: TextStyle(color: AppColors.blueFigma),
                     children: [
                       TextSpan(
                         text: 'Log in',
@@ -168,6 +170,8 @@ class _CadastroState extends State<Cadastro> {
                     ],
                   ),
                 ),
+
+
               ],
             ),
           ),

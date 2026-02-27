@@ -1,17 +1,17 @@
 class CadastroModel {
   final String nome;
-  final String email;
+  final String apelido;
   final String senha;
   final String confirmarSenha;
 
   CadastroModel({
     required this.nome,
-    required this.email,
+    required this.apelido,
     required this.senha,
     required this.confirmarSenha,
   });
 
-  bool get emailValido => email.contains('@');
+  bool get apelidoValido => apelido.length >=1;
 
   bool get senhaValida => senha.length >= 6;
 
@@ -19,13 +19,13 @@ class CadastroModel {
 
   bool get dadosValidos {
     print('nome="$nome"');
-    print('email="$email"');
-    print('emailValido=$emailValido');
+    print('email="$apelido"');
+    print('emailValido=$apelidoValido');
     print('senhaValida=$senhaValida');
     print('senhasIguais=$senhasIguais');
 
     return nome.trim().isNotEmpty &&
-        emailValido &&
+        apelidoValido &&
         senhaValida &&
         senhasIguais;
   }

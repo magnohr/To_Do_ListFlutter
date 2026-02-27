@@ -9,7 +9,7 @@ class CadastroController {
     final prefs = await SharedPreferences.getInstance();
 
     await prefs.setString('nome', cadastro.nome);
-    await prefs.setString('email', cadastro.email);
+    await prefs.setString('email', cadastro.apelido);
     await prefs.setString('senha', cadastro.senha);
 
     return true;
@@ -30,16 +30,16 @@ class CadastroController {
     final prefs = await SharedPreferences.getInstance();
 
     final nome = prefs.getString('nome');
-    final email = prefs.getString('email');
+    final apelido = prefs.getString('apelido');
     final senha = prefs.getString('senha');
 
-    if (nome == null || email == null || senha == null) {
+    if (nome == null || apelido == null || senha == null) {
       return null;
     }
 
     return CadastroModel(
       nome: nome,
-      email: email,
+      apelido: apelido,
       senha: senha,
       confirmarSenha: senha,
     );

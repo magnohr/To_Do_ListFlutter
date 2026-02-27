@@ -56,18 +56,19 @@ class _LoginState extends State<Login> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 104),
-            
-                SvgPicture.asset(
-                  'assets/images/Union.svg',
-                  width: 187,
-                  height: 180,
+
+                Image.asset(
+                  'assets/images/StoryG.png',
+                  width: 250,  // largura opcional
+                  height: 250, // altura opcional
+                  fit: BoxFit.contain, // melhor que cover
                 ),
             
-                const SizedBox(height: 180),
+                const SizedBox(height: 50),
             
                 // 🔹 EMAIL
                 AppInput(
-                  hint: 'Email',
+                  hint: 'Apelido',
                   controller: emailController,
                 ),
             
@@ -83,7 +84,7 @@ class _LoginState extends State<Login> {
                       obscurePassword
                           ? Icons.visibility_off
                           : Icons.visibility,
-                      color: AppColors.lightGray,
+                      color: AppColors.black,
                     ),
                     onPressed: () {
                       setState(() {
@@ -92,7 +93,7 @@ class _LoginState extends State<Login> {
                     },
                   ),
                 ),
-            
+            /*
                 const SizedBox(height: 8),
             
                 // 🔹 FORGOT PASSWORD
@@ -108,6 +109,8 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                 ),
+
+             */
             
                 const SizedBox(height: 24),
             
@@ -117,7 +120,7 @@ class _LoginState extends State<Login> {
                   height: 48,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.peach,
+                      backgroundColor: AppColors.Colorblue,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
@@ -152,7 +155,7 @@ class _LoginState extends State<Login> {
                 RichText(
                   text: TextSpan(
                     text: "Don't have an account? ",
-                    style: TextStyle(color: AppColors.dark),
+                    style: TextStyle(color: AppColors.black),
                     children: [
                       TextSpan(
                         text: 'Sign up',

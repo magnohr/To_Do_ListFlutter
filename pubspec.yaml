@@ -4,6 +4,23 @@ publish_to: 'none'
 
 version: 1.0.0+1
 
+# Estrutura da versão:
+# 1.0.0+1
+# │ │ │  └── Build number (Play Store usa pra updates automáticos)
+# │ │ └──── Patch (correções pequenas de bugs)
+# │ └────── Minor (novas funções sem mudar tudo)
+# └──────── Major (mudanças grandes no app)
+#
+# Exemplos:
+# 1.0.0+1  → Primeira versão publicada
+# 1.0.1+2  → Corrigiu bugs
+# 1.1.0+3  → Nova função adicionada
+# 2.0.0+10 → Mudou muita coisa no app
+#
+# Dica:
+# Sempre aumente o +numero ao publicar na Play Store
+
+
 environment:
   sdk: ^3.9.2
 
@@ -11,7 +28,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  shared_preferences: ^2.2.2
+  shared_preferences: ^2.5.4
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.0.10
   image_picker: ^1.0.4
@@ -20,6 +37,18 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   flutter_quill: ^11.5.0
+  pdf: ^3.10.8
+  printing: ^5.12.0
+  path_provider: ^2.1.2
+  flutter_launcher_icons: ^0.13.1
+  google_mobile_ads: ^6.0.0
+
+flutter_launcher_icons:
+    android: true
+    ios: false
+    image_path: "assets/images/logo.png"
+    adaptive_icon_background: "#ffffff"
+    adaptive_icon_foreground: "assets/icon/icon.png"
 
 
 
@@ -39,6 +68,11 @@ flutter:
     - assets/fontes/
     - assets/images/Union.svg
     - assets/images/rafiki.svg
+    - assets/images/casa.png
+    - assets/images/livros.png
+    - assets/images/list.png
+    - assets/images/bookL.svg
+    - assets/images/StoryG.png
 
 
   fonts:

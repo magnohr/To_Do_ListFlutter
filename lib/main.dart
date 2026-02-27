@@ -21,8 +21,20 @@ import 'features/login/cadastro/cadastro.dart';
 import 'features/login/login.dart';
 import 'features/splash/splash.dart';
 
+import 'package:flutter/services.dart';
+
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await MobileAds.instance.initialize(); // ⭐ ESSENCIAL
+
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
+
+  await Future.delayed(const Duration(milliseconds: 50)); // ⭐ estabilidade extra
 
   try {
     await Hive.initFlutter();
@@ -37,8 +49,10 @@ void main() async {
   }
 
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => TodoController(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => TodoController()),
+      ],
       child: const MyApp(),
     ),
   );

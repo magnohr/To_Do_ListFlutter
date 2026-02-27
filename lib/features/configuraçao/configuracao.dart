@@ -27,14 +27,14 @@ class _ConfiguracaoState extends State<Configuracao> {
     final prefs = await SharedPreferences.getInstance();
 
     final nome = prefs.getString('nome');
-    final email = prefs.getString('email');
+    final apelido = prefs.getString('email');
     final senha = prefs.getString('senha');
 
-    if (nome != null && email != null && senha != null) {
+    if (nome != null && apelido != null && senha != null) {
       setState(() {
         usuario = CadastroModel(
           nome: nome,
-          email: email,
+          apelido: apelido,
           senha: senha,
           confirmarSenha: senha, // só para o model funcionar
         );
@@ -45,6 +45,7 @@ class _ConfiguracaoState extends State<Configuracao> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24),
@@ -67,18 +68,22 @@ class _ConfiguracaoState extends State<Configuracao> {
                       style: AppTextStyles.bebas18Peach,
                     ),
                   ),
-                  SvgPicture.asset(
-                    'assets/images/settings.svg',
-                    width: 24,
-                    height: 24,
-                  ),
+
                 ],
               ),
 
-              const SizedBox(height: 114),
-              Center(child: SvgPicture.asset('assets/images/Union.svg')),
-              const SizedBox(height: 109),
-
+              SizedBox(height: MediaQuery.of(context).size.height * 0.08),
+              Center
+                (child:
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.35, // 25% da tela
+                child: Image.asset(
+                  'assets/images/StoryG.png',
+                  fit: BoxFit.contain,
+                ),
+              )
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.08),
               // NOME
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -97,9 +102,9 @@ class _ConfiguracaoState extends State<Configuracao> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('EMAIL', style: AppTextStyles.config),
+                  Text('Apelido', style: AppTextStyles.config),
                   Text(
-                    usuario?.email ?? '-',
+                    usuario?.apelido ?? '-',
                     style: AppTextStyles.configDados,
                   ),
                 ],
@@ -137,7 +142,7 @@ class _ConfiguracaoState extends State<Configuracao> {
                   width: 327,
                   height: 48,
                   decoration: BoxDecoration(
-                    color: AppColors.peach,
+                    color: AppColors.black,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Center(
